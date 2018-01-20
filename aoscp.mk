@@ -23,11 +23,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common aoscp stuff.
+$(call inherit-product, vendor/aoscp/config/common_full_phone.mk)
+
+# Inherit telephony stuff
+$(call inherit-product, vendor/aoscp/configs/telephony.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := lineage_herolte
+PRODUCT_NAME := aoscp_herolte
 PRODUCT_DEVICE := herolte
 PRODUCT_MODEL := SM-G930F
 PRODUCT_BRAND := samsung
